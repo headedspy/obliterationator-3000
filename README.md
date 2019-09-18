@@ -3,10 +3,10 @@
 ## Introductory project at the Fontys ICT program
 
 ##### Participants
-* Vladimir Vladinob
+* Vladimir Vladinov
 * Vasil Sotirov
 * Emilian Alexandru
 
 ##### To-do board
-** https://trello.com/b/REE77CiE
+https://trello.com/b/REE77CiE
 
