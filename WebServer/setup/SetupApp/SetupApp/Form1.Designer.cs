@@ -36,10 +36,18 @@ namespace SetupApp
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.passwordButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.loginPanel = new System.Windows.Forms.Panel();
             this.appOutput = new System.Windows.Forms.Label();
+            this.NetworkBox = new System.Windows.Forms.GroupBox();
+            this.wifiSsidBox = new System.Windows.Forms.TextBox();
+            this.wifiPassBox = new System.Windows.Forms.TextBox();
+            this.wifiButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.loginPanel.SuspendLayout();
+            this.NetworkBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // serialPort
@@ -79,7 +87,7 @@ namespace SetupApp
             // 
             // passwordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(45, 26);
+            this.passwordBox.Location = new System.Drawing.Point(167, 119);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(100, 20);
             this.passwordBox.TabIndex = 3;
@@ -87,7 +95,7 @@ namespace SetupApp
             // passwordButton
             // 
             this.passwordButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.passwordButton.Location = new System.Drawing.Point(54, 62);
+            this.passwordButton.Location = new System.Drawing.Point(181, 151);
             this.passwordButton.Name = "passwordButton";
             this.passwordButton.Size = new System.Drawing.Size(75, 23);
             this.passwordButton.TabIndex = 4;
@@ -107,15 +115,16 @@ namespace SetupApp
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Admin Panel";
             // 
-            // panel1
+            // loginPanel
             // 
-            this.panel1.Controls.Add(this.passwordButton);
-            this.panel1.Controls.Add(this.passwordBox);
-            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 6;
+            this.loginPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.loginPanel.Controls.Add(this.passwordButton);
+            this.loginPanel.Controls.Add(this.passwordBox);
+            this.loginPanel.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.loginPanel.Location = new System.Drawing.Point(12, 9);
+            this.loginPanel.Name = "loginPanel";
+            this.loginPanel.Size = new System.Drawing.Size(444, 289);
+            this.loginPanel.TabIndex = 6;
             // 
             // appOutput
             // 
@@ -125,24 +134,94 @@ namespace SetupApp
             this.appOutput.Size = new System.Drawing.Size(0, 13);
             this.appOutput.TabIndex = 7;
             // 
+            // NetworkBox
+            // 
+            this.NetworkBox.Controls.Add(this.label2);
+            this.NetworkBox.Controls.Add(this.label1);
+            this.NetworkBox.Controls.Add(this.wifiButton);
+            this.NetworkBox.Controls.Add(this.wifiPassBox);
+            this.NetworkBox.Controls.Add(this.wifiSsidBox);
+            this.NetworkBox.Location = new System.Drawing.Point(12, 131);
+            this.NetworkBox.Name = "NetworkBox";
+            this.NetworkBox.Size = new System.Drawing.Size(200, 140);
+            this.NetworkBox.TabIndex = 8;
+            this.NetworkBox.TabStop = false;
+            this.NetworkBox.Text = "Network";
+            // 
+            // wifiSsidBox
+            // 
+            this.wifiSsidBox.Location = new System.Drawing.Point(54, 34);
+            this.wifiSsidBox.Name = "wifiSsidBox";
+            this.wifiSsidBox.Size = new System.Drawing.Size(140, 20);
+            this.wifiSsidBox.TabIndex = 0;
+            // 
+            // wifiPassBox
+            // 
+            this.wifiPassBox.Location = new System.Drawing.Point(54, 60);
+            this.wifiPassBox.Name = "wifiPassBox";
+            this.wifiPassBox.Size = new System.Drawing.Size(140, 20);
+            this.wifiPassBox.TabIndex = 1;
+            // 
+            // wifiButton
+            // 
+            this.wifiButton.Location = new System.Drawing.Point(54, 98);
+            this.wifiButton.Name = "wifiButton";
+            this.wifiButton.Size = new System.Drawing.Size(75, 23);
+            this.wifiButton.TabIndex = 2;
+            this.wifiButton.Text = "CHANGE";
+            this.wifiButton.UseVisualStyleBackColor = true;
+            this.wifiButton.Click += new System.EventHandler(this.wifiButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "SSID:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Pass:";
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(157, 12);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(75, 23);
+            this.logoutButton.TabIndex = 9;
+            this.logoutButton.Text = "Log out";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(755, 419);
+            this.Controls.Add(this.loginPanel);
+            this.Controls.Add(this.NetworkBox);
             this.Controls.Add(this.appOutput);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.output);
+            this.Controls.Add(this.logoutButton);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.loginPanel.ResumeLayout(false);
+            this.loginPanel.PerformLayout();
+            this.NetworkBox.ResumeLayout(false);
+            this.NetworkBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,8 +236,15 @@ namespace SetupApp
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Button passwordButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel loginPanel;
         private System.Windows.Forms.Label appOutput;
+        private System.Windows.Forms.GroupBox NetworkBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button wifiButton;
+        private System.Windows.Forms.TextBox wifiPassBox;
+        private System.Windows.Forms.TextBox wifiSsidBox;
+        private System.Windows.Forms.Button logoutButton;
     }
 }
 
