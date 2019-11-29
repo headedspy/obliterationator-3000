@@ -6,7 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO.Ports;
 using System.Windows.Forms;
+using System.Net;
+using System.IO;
 
 namespace SetupApp{
     public partial class Form1 : Form{
@@ -19,22 +22,18 @@ namespace SetupApp{
         bool login = false;
 
         private void Form_Load(object sender, EventArgs e){
-            serialPort.Open();
-            timer.Start();
+            string[] ports = SerialPort.GetPortNames();
+
+            foreach (string port in ports) serialPorts.Items.Add(port);
         }
 
         ~Form1(){
             serialPort.Close();
-            timer.Stop();
-        }
-
-        private void timer_Tick(object sender, EventArgs e){
-            output.Text = mStr;
         }
 
         private void serialPort_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e){
             mStr = serialPort.ReadLine();
-            
+
             if (mStr.Equals("LA\r")) {
                 OutputText("Login accepted");
                 ClearBox(passwordBox);
@@ -42,23 +41,39 @@ namespace SetupApp{
                 LoginControl();
             } else if (mStr.Equals("LR\r")) {
                 OutputText("Password change refused");
-            } else if (mStr.Equals("LI\r")) {
+            } else if (mStr.Contains("LI\r")) {
                 OutputText("Password incorrect");
-            } else if (mStr.Equals("PC\r")) {
+            } else if (mStr.Contains("PC")) {
                 OutputText("Password successfully changed");
                 ClearBox(input);
+            }else if (mStr.Equals("WI\r")) {
+                wifiStatusPanel.BackColor = Color.Green;
+            } else if (mStr.Equals("WO\r")) {
+                wifiStatusPanel.BackColor = Color.Red;
+            }else if (mStr.Length != 0 && mStr[0] == 'I') {
+                ChangeIP(mStr.Substring(1));
+            }
+            else {
+                OutputText(mStr);
             }
         }
 
         private void changePassButton_Click(object sender, EventArgs e){
             String serialData = "P " + input.Text;
-            //password; staticIP; SSID/pass
-            serialPort.WriteLine(serialData);
+            try {
+                serialPort.WriteLine(serialData);
+            } catch (System.InvalidOperationException) {
+                OutputText("Connection to port refused");
+            }
         }
 
         private void passwordButton_Click(object sender, EventArgs e){
             String serialData = "C " + passwordBox.Text;
-            serialPort.WriteLine(serialData);
+            try {
+                serialPort.WriteLine(serialData);
+            } catch (System.InvalidOperationException) {
+                OutputText("Connection to port refused");
+            }
         }
 
         private void logoutButton_Click(object sender, EventArgs e){
@@ -66,31 +81,30 @@ namespace SetupApp{
             LoginControl();
         }
 
-        private void wifiButton_Click(object sender, EventArgs e)
-        {
+        private void wifiButton_Click(object sender, EventArgs e){
             String ssid = wifiSsidBox.Text;
             String pass = wifiPassBox.Text;
 
-            String serialData = "W " + ssid;
+            String serialData = "W " + ssid + "/" + pass;
 
-            serialPort.WriteLine(serialData);
-
-            serialData = "w " + pass;
-
-            serialPort.WriteLine(serialData);
+            try {
+                serialPort.WriteLine(serialData);
+            } catch (System.InvalidOperationException) {
+                OutputText("Connection to port refused");
+            }
         }
 
-        delegate void SetTextCallback(string text);
+        delegate void OutputTextCallback(string text);
         delegate void LoginControlCallback();
         delegate void ClearBoxCallback(TextBox box);
+        delegate void ChangeIPCallback(string ip);
 
-        private void OutputText(string text)
-        {
+        private void OutputText(string text){
             // InvokeRequired required compares the thread ID of the
             // calling thread to the thread ID of the creating thread.
             // If these threads are different, it returns true.
             if (appOutput.InvokeRequired) {
-                SetTextCallback d = new SetTextCallback(OutputText);
+                OutputTextCallback d = new OutputTextCallback(OutputText);
                 Invoke(d, new object[] { text });
             }else {
                 appOutput.Text = text;
@@ -112,6 +126,63 @@ namespace SetupApp{
                 Invoke(d, new object[] { box });
             }else {
                 box.Text = "";
+            }
+        }
+
+        private void ChangeIP(string ip){
+            if (ipLabel.InvokeRequired) {
+                ChangeIPCallback d = new ChangeIPCallback(ChangeIP);
+                Invoke(d, new object[] { ip });
+            } else {
+                ipLabel.Text = ip;
+            }
+        }
+
+        private void serialPorts_SelectedIndexChanged(object sender, EventArgs e){
+            serialPort.Close();
+            serialPort.PortName = serialPorts.SelectedItem.ToString();
+        }
+
+        private void portConnectButton_Click(object sender, EventArgs e){
+            try {
+                serialPort.Open();
+            } catch (System.IO.IOException) {
+                OutputText("Can't connect to port");
+            } catch (InvalidOperationException) {
+                OutputText("Port already open");
+            } catch (UnauthorizedAccessException) {
+                OutputText("Access to port refused");
+            }
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e){
+            serialPorts.Items.Clear();
+            string[] ports = SerialPort.GetPortNames();
+
+            foreach(string port in ports) serialPorts.Items.Add(port);
+        }
+
+        private void showPassButton_Click(object sender, EventArgs e){
+            wifiPassBox.PasswordChar = (wifiPassBox.PasswordChar == '\0' ? '*' : '\0');
+        }
+
+        private void showLoginPassButton_Click(object sender, EventArgs e){
+            passwordBox.PasswordChar = (passwordBox.PasswordChar == '\0' ? '*' : '\0');
+        }
+
+        private void entryButton_Click(object sender, EventArgs e){
+            try {
+                serialPort.WriteLine("E"+entryTextBox.Text);
+            } catch (System.InvalidOperationException) {
+                OutputText("Connection to port refused");
+            }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e){
+            try {
+                serialPort.WriteLine("e" + exitTextBox.Text);
+            } catch (System.InvalidOperationException) {
+                OutputText("Connection to port refused");
             }
         }
     }

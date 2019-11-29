@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,7 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="serialPort.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="back-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Size-buttons-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Size-buttons-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8-play-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-play-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="central-control-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\central-control-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="starttrop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\starttrop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="start" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grayisbtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grayisbtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="confirm-order-button-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\confirm-order-button-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left-control-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-control-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddPizza-button-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddPizza-button-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Size-buttons-panel-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Size-buttons-panel-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="right-control-order-list-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right-control-order-list-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fade-line-bluish" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fade-line-bluish.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left-control-buttons-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-control-buttons-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="right-control-oreder-remove-button-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right-control-oreder-remove-button-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

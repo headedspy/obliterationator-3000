@@ -2,11 +2,10 @@
 
 ## Introductory project at the Fontys ICT program
 
-##### Participants
-* Vladimir Vladinov
-* Vasil Sotirov
-* Emilian Alexandru
+Smart system for managing a pizza shop consisting of:
+- Web server
+- Database
+- Cashier Application
+- Cook Application
 
-##### To-do board
-https://trello.com/b/REE77CiE
-
+Instructions on how to use it can be found in the Evaluation report, Paperwork folder

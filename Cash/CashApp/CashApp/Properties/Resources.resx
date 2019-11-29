@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,7 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="serialPort.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pizza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pizza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Size-buttons-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Size-buttons-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="b1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\b1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="central-control-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\central-control-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Size-buttons-panel-backgrounded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Size-buttons-panel-backgrounded.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left-control-background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-control-background1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pizza2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pizza2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="left-control-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\left-control-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pizza1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pizza1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Size-buttons-panel-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Size-buttons-panel-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="right-control-order-list-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\right-control-order-list-background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main buttons-hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\main buttons-hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main buttons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\main buttons.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main buttons-click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\main buttons-click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="starttrop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\starttrop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
